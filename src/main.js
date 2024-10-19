@@ -1,13 +1,8 @@
-import kaplay from "kaplay";
-import "kaplay/global";
+import k from "./kaplayCtx";
+import disclaimer from "./scenes/disclaimer";
 
-const k = kaplay()
+k.loadFont("mania", "fonts/mania.ttf");
 
-k.loadSprite("bean", "sprites/bean.png")
+k.scene("disclaimer", disclaimer);
 
-k.add([
-	k.pos(120, 80),
-	k.sprite("bean"),
-])
-
-k.onClick(() => k.addKaboom(k.mousePos()))
+k.go("disclaimer");
